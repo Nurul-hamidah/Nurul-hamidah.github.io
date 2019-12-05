@@ -1,0 +1,140 @@
+.jumbotron img {
+    width: 200px;
+    border: 1px solid #bbbbbb;
+}
+
+hr {
+    width: 250px;
+
+    
+}
+
+section {
+    min-height: 600px;
+}
+
+.portfolio {
+    background-color: #eeeeee;
+}
+
+.contact {
+    min-height: 800px;
+}
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 100;
+    transition: .8s;
+    text-align: center;
+    padding: 100px;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0, 0,0, .5);
+
+}
+
+.overlay:target img {
+    animation: fade 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 825px;
+    margin-left: -200px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    line-height: 25px;
+    padding: 5px;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: slideDownFade .5s .5s forwards;
+}
+
+/* navigasi */
+.next, .prev{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/next.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 250px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../img/prev.png);
+    margin-left: -50px;
+}
+
+.overlay:target .next, .overlay:target .prev {
+    animation: fade .5s .5s forwards;
+}
+
+/* animasi */
+
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #333333;
+}
+
+footer p {
+    color: #aaaaaa;
+    padding: 30px;
+    font-size: 0.9em;
+}
+
+
